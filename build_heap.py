@@ -1,7 +1,7 @@
 def build_heap(data):
     swaps = []
     l = len(data)
-    i = int((l-2)/2)
+    i = int((l-3)/2)
     while (i>=0):
         if(data[2*i+1]>data[2*i+2]):
             min = 2*i+2
@@ -29,7 +29,7 @@ def main():
         text = input()
         if 'a' in text:
             return
-        text = "/test/" + text
+        text = "tests/" + text
         print(text)
         with open(text) as file:
             n = int(file.readline())
