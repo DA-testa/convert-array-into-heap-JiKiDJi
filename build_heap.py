@@ -1,9 +1,9 @@
-
+# python3
 def build_heap(data):
     swaps = []
     l = len(data)
-    i = int((l-2)/2)
-    while (i>=0):
+    fr = int((l-2)/2)   
+    def ch(i):
         if(2*i+2>=l):
             min=2*i+1
         else:
@@ -15,11 +15,13 @@ def build_heap(data):
             swaps.append([i, min])
             data[min], data[i] = data[i], data[min]
             if(min*2+1<=l-1):
-                i=min+1       
-        i-=1
+                ch(min) 
+        else:
+            return
+    while(fr>=0):   
+        ch(fr)
+        fr-=1
 
-            
-    print(data)
     return swaps
 
 
